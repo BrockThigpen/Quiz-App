@@ -17,7 +17,6 @@ body{
     padding-top: 0px;
     padding-bottom: 0px;
     width: auto;
-    border: 1px solid black;
     color: azure;
     background-color: blue;
     border-radius: 5px;
@@ -40,12 +39,11 @@ body{
     border-radius: 5px;
     float: left;
     clear: both;
-    list-style-position:inside;
-    border: 1px solid black;
+    list-style-position: inside;
     color: azure;
     background-color: blue;
 }
-li:hover{
+#answers li:hover{
     background-color: cornflowerblue;
 }
 #scoreList{
