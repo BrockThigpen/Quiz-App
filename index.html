@@ -22,12 +22,26 @@
         <div id="startPage" class="container col-md-8 col-sm-10 d-flex flex-column align-items-center">
             <h1 id="startHead">Coding Quiz Challenge</h1>
             <p id="startP">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
-            <button id="startBtn">Start Quiz</button>
+            <button class="btn" id="startBtn">Start Quiz</button>
         </div>
         <!-- questions page -->
         <div id="questionPage" class="container col-md-8 col-sm-10 d-flex flex-column">
             <h1 class="hide" id="theQuestion">Question...</h1>
             <ol class="hide p-0" id="answers" class="p-0"></ol>
+        </div>
+        <!-- score input -->
+        <div id="scoreInput" class="container col-md-8 col-sm-10 d-flex flex-column">
+            <h1 id="doneH">All done!</h1>
+            <p id="doneP">Your finle score: </p>
+            <div>
+                <p id="enterI">Enter initials:</p>
+                <input class="p-0" type="text" id="playerInitials">
+                <button class="btn" id="initalSubmit">Submit</button>
+            </div>
+        </div>
+        <!-- show past scores -->
+        <div id="highScores" class="container col-md-8 col-sm-10 d-flex flex-column">
+
         </div>
     </div>
 </body>

@@ -11,9 +11,31 @@ body{
     margin-top: 50px;
 }
 #startBtn{
+    padding: 0px 6px;
+}
+.btn{
+    padding-top: 0px;
+    scroll-padding-bottom: 0px;
     width: 100px;
+    border: 1px solid black;
+    color: azure;
+    background-color: blue;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: cornflowerblue;
+}
+#initalSubmit{
+    margin-left: 5px;
+    padding: 0px 6px;
+}
+#enterI{
+    float: left;
 }
 li{
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
     margin: 5px;
     border-radius: 5px;
     float: left;
@@ -22,4 +44,7 @@ li{
     border: 1px solid black;
     color: azure;
     background-color: blue;
+}
+li:hover{
+    background-color: cornflowerblue;
 }

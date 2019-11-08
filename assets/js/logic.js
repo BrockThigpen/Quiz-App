@@ -21,6 +21,7 @@ function startQuiz(){
     questionsShuflle = questions.sort(() => Math.random() - .5 );
     questionIndex = 0;
     showNextQ();
+    setTimer();
 }
 
 // render quetions
@@ -32,9 +33,12 @@ function rendorQuestion(questions) {
     for(var i = 0; i < questions.choices.length; i++){
         const holder = document.createElement('li');
         holder.innerText = questions.choices[i];
+        holder.setAttribute('data-index', i);
         answersEl.appendChild(holder)
     }
 }
+
+
 
 function setTimer () {
 
