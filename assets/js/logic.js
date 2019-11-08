@@ -11,6 +11,7 @@ const answersEl = document.getElementById('answers');
 let questionsShuflle, questionIndex;
 let score = 0;
 let timeRemaing = 0;
+let showScore = 0;
 
 // startBtn on click
 startBtn.addEventListener("click", startQuiz);
@@ -18,15 +19,16 @@ function startQuiz(){
     startBtn.classList.add('hide');
     startH.classList.add('hide');
     startP.classList.add('hide');
-    questionEl.classList.remove('hide');
-    answersEl.classList.remove('hide');
     questionsShuflle = questions.sort(() => Math.random() - .5 );
     questionIndex = 0;
+    questionEl.classList.remove('hide');
+    answersEl.classList.remove('hide');
     showNextQ();
     setTimer();
 }
 // render quetions and choices 
 function showNextQ(){
+    resetState()
     rendorQuestion(questionsShuflle[questionIndex])
 }
 function rendorQuestion(questions) {
@@ -37,17 +39,25 @@ function rendorQuestion(questions) {
         answersEl.appendChild(holder)
     }
 }
+function resetState(){
+    while(answersEl.firstChild){
+        answersEl.removeChild(answersEl.firstChild)
+    }
+}
 // answer on click
 answersEl.addEventListener('click', function (e){
-    let target = event.target;
+    let target = e.target;
     if(target.matches('li') === true){
         let picked = target.innerText;
         if(picked === questionsShuflle[questionIndex].answer){
             score = score + 20;
+            questionIndex++;
             showNextQ();
-            console.log(score);
-        }else{
+        }else {
+            questionIndex++;
             timeRemaing = timeRemaing - 10;
+            showNextQ();
+
         }
     }
 })
