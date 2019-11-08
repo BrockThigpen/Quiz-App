@@ -1,0 +1,23 @@
+body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.hide{
+    display: none;
+}
+#startPage{
+    margin-top: 50px;
+}
+#startBtn{
+    width: 100px;
+}
+/* li{
+    margin: 5px;
+    border-radius: 5px;
+    float: left;
+    clear: both;
+    list-style-position:inside;
+    border: 1px solid black;
+} */

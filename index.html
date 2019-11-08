@@ -7,14 +7,27 @@
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script defer src="script.js"></script>
+    <script defer src="assets/js/questions.js"></script>
+    <script defer src="assets/js/logic.js"></script>
     <title>Quiz App</title>
 </head>
 <body>
+    <!-- header -->
     <div class="container">
-        <div class="header d-flex w-100 justify-content-between">
-            <h3 id="highscoreBtn">View Highscores</h3>
-            <h3 id="timer">Time:</h3>
+        <div class="header d-flex justify-content-between">
+            <h5 id="highscoreBtn">View Highscores</h5>
+            <h5 id="timer">Time: 0</h5>
+        </div>
+        <!-- start page -->
+        <div id="startPage" class="container col-md-8 col-sm-10 d-flex flex-column align-items-center">
+            <h1 id="startHead">Coding Quiz Challenge</h1>
+            <p id="startP">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
+            <button id="startBtn">Start Quiz</button>
+        </div>
+        <!-- questions page -->
+        <div id="questionPage" class="container col-md-5 col-sm-10 d-flex flex-column">
+            <h1 id="theQuestion">Question...</h1>
+            <ol id="answers" class="p-0"></ol>
         </div>
     </div>
 </body>
