@@ -15,8 +15,8 @@ body{
 }
 .btn{
     padding-top: 0px;
-    scroll-padding-bottom: 0px;
-    width: 100px;
+    padding-bottom: 0px;
+    width: auto;
     border: 1px solid black;
     color: azure;
     background-color: blue;
@@ -32,7 +32,7 @@ body{
 #enterI{
     float: left;
 }
-li{
+#answers li{
     cursor: pointer;
     padding-left: 5px;
     padding-right: 5px;
@@ -47,4 +47,7 @@ li{
 }
 li:hover{
     background-color: cornflowerblue;
+}
+#scoreList{
+    background-color: cornflowerblue
 }
