@@ -13,11 +13,13 @@ body{
 #startBtn{
     width: 100px;
 }
-/* li{
+li{
     margin: 5px;
     border-radius: 5px;
     float: left;
     clear: both;
     list-style-position:inside;
     border: 1px solid black;
-} */
+    color: azure;
+    background-color: blue;
+}

@@ -29,10 +29,13 @@ function showNextQ(){
 }
 function rendorQuestion(questions) {
     questionEl.innerHTML = questions.title;
-    questions.choices.forEach(choices =>{
+    for(var i = 0; i < questions.choices.length; i++){
         const holder = document.createElement('li');
-        holder.innerText = choices.text;
+        holder.innerText = questions.choices[i];
         answersEl.appendChild(holder)
+    }
+}
 
-    })
+function setTimer () {
+
 }
