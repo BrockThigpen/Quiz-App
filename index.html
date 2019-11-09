@@ -32,16 +32,16 @@
         <!-- score input -->
         <div id="scoreInput" class="container col-md-8 col-sm-10 d-flex flex-column">
             <h1 class="hide" id="doneH">All done!</h1>
-            <p class="hide" id="doneP">Your finle score: </p>
+            <p class="hide" id="doneP"></p>
             <div>
                 <p class="hide" id="enterI">Enter initials:</p>
-                <input class="p-0 hide" type="text" id="playerInitials">
-                <button class="btn hide" id="initalSubmit">Submit</button>
+                <input class="p-0 hide" type="text" id="input">
+                <button class="btn hide" id="submit">Submit</button>
             </div>
         </div>
         <!-- show past scores -->
-        <div id="highScores" class="container col-md-8 col-sm-10 d-flex flex-column">
-            <h1 class="hide">Highscores</h1>
+        <div class="container col-md-8 col-sm-10 d-flex flex-column">
+            <h1 id="scoreH" class="hide">Highscores</h1>
             <ol class="hide" id="scoreList"></ol>
             <div>
                 <button class="btn hide" type="button" id="restart">Go Back</button>

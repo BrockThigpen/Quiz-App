@@ -10,19 +10,19 @@ const questions = [
       answer: "parentheses"
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "fkjskdjfskjdfksjdfh",
+      choices: ["quotes", "curly brackets", "answer", "square brackets"],
+      answer: "answer"
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "qqqqqqqqqqqqqqqq",
+      choices: ["quotes", "curly brackets", "answer", "square brackets"],
+      answer: "answer"
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-      answer: "parentheses"
+      title: "vvvvvvvvvvv",
+      choices: ["quotes", "curly brackets", "answer", "square brackets"],
+      answer: "answer"
     },
     
   ];
