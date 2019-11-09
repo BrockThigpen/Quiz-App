@@ -13,6 +13,9 @@ body{
 #startBtn{
     padding: 0px 6px;
 }
+#highscoreBtn{
+    cursor: pointer;
+}
 .btn{
     padding-top: 0px;
     padding-bottom: 0px;
@@ -47,5 +50,7 @@ body{
     background-color: cornflowerblue;
 }
 #scoreList{
-    background-color: cornflowerblue
+    padding-left: 18px;
+    background-color: cornflowerblue;
+    border: 1px solid black;    
 }

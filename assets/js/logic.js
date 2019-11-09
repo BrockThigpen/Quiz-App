@@ -14,15 +14,35 @@ const submitEl = document.getElementById('submit');
 const scoreHEl = document.getElementById('scoreH');
 const scoreListEl = document.getElementById('scoreList');
 const restartEl = document.getElementById('restart');
-const deleteScoresEl = document.getElementById('deleteScores');
+const deleteScoresEl = document.getElementById('deletescores');
 // variables
 let questionsShuflle, questionIndex;
 let score = 0;
 let timeRemaing = 0;
 let showScore = 0;
+let name = '';
+let timer;
+let savedScores = [];
+// view highscore btn
+highscoreBtn.addEventListener('click', () => {
+    stopTimer();
+    startBtn.classList.add('hide');
+    startH.classList.add('hide');
+    startP.classList.add('hide');
+    highscoreBtn.classList.add('hide');
+    timerEl.classList.add('hide');
+    questionEl.classList.add('hide');
+    answersEl.classList.add('hide');
+    scoreHEl.classList.remove('hide');
+    scoreListEl.classList.remove('hide');
+    restartEl.classList.remove('hide');
+    deleteScoresEl.classList.remove('hide');
+
+})
 // startBtn on click
 startBtn.addEventListener("click", startQuiz);
 function startQuiz(){
+    score = 0;
     startBtn.classList.add('hide');
     startH.classList.add('hide');
     startP.classList.add('hide');
@@ -30,6 +50,7 @@ function startQuiz(){
     questionIndex = 0;
     questionEl.classList.remove('hide');
     answersEl.classList.remove('hide');
+    inputEl.value = '';
     showNextQ();
     setTimer();
 }
@@ -37,6 +58,7 @@ function startQuiz(){
 function showNextQ(){
     resetState()
     if(questionsShuflle.length < questionIndex + 1){
+        stopTimer();
         showScore = score + timeRemaing;
         highscoreBtn.classList.add('hide');
         timerEl.classList.add('hide');
@@ -85,11 +107,11 @@ answersEl.addEventListener('click', function (e){
 function setTimer () {
     timerEl.innerText = 'Time: 75';
     timeRemaing = questions.length * 15;
-    let timer = setInterval( () => {
+    timer = setInterval( () => {
         timeRemaing--;
         timerEl.innerText = 'Time: '+ timeRemaing;
-        if(timeRemaing <= 0){
-            clearInterval(timer);
+        if(timeRemaing === 0){
+            stopTimer();
             showScore = score + timeRemaing;
             highscoreBtn.classList.add('hide');
             timerEl.classList.add('hide');
@@ -104,28 +126,62 @@ function setTimer () {
         }
     }, 1000);
 }
+function stopTimer(){
+    clearInterval(timer);
+}
 // go back button
 restartEl.addEventListener('click', () => {
-    // hide current dom elements 
-    // show elements for startPage
     scoreHEl.classList.add('hide');
     scoreListEl.classList.add('hide');
     restartEl.classList.add('hide');
-    // deleteScoresEl.classList.add('hide');
+    deleteScoresEl.classList.add('hide');
     startBtn.classList.remove('hide');
     startH.classList.remove('hide');
     startP.classList.remove('hide');
+    highscoreBtn.classList.remove('hide');
+    timerEl.classList.remove('hide');
+    timerEl.innerText = 'Time: ';
+    stopTimer();
 })
 // delete scores
-deleteScoresEl.addEventListener('click', clearScores);
-function clearScores(){
-  for (var i = 0; i < localStorage.length; i++){
-    let lIndex = localStorage.key(i);
-    remove_LocalStorage(lIndex);
-   }
-}
+deleteScoresEl.addEventListener('click', () => {
+    localStorage.clear();
+    savedScores = [];
+    while(scoreListEl.firstChild){
+        scoreListEl.removeChild(scoreListEl.firstChild)
+    }
+})
 // submit button
-// on click has if statement
-// check if a string has been entered into input
-// if not will create a <p></p> at the end of #scoreInput and display a messsge
-// if so will save score and input to local storage, call function to hide current dom elements and remove hide from elements in show past scores
+submitEl.addEventListener('click', () => {
+    name = inputEl.value.trim();
+    if(!name){
+        inputEl.placeholder = 'Please enter initials';
+    }else{
+        savedScores.push({name: name, score: showScore});
+        localStorage.setItem('theScores', JSON.stringify(savedScores));
+        pastScores();
+    }
+})
+function pastScores(){
+    doneHEl.classList.add('hide');
+    donePEl.classList.add('hide');
+    enterIEl.classList.add('hide');
+    inputEl.classList.add('hide');
+    submitEl.classList.add('hide');
+    resetList();
+    let displayScores = JSON.parse(localStorage.getItem('theScores'));
+    for (let i = 0; i < displayScores.length; i++){
+        const holder = document.createElement('li');
+        holder.innerText = displayScores[i].name + "'s score is: " + displayScores[i].score;
+        scoreListEl.appendChild(holder);
+    }
+    scoreHEl.classList.remove('hide');
+    scoreListEl.classList.remove('hide');
+    restartEl.classList.remove('hide');
+    deleteScoresEl.classList.remove('hide');
+}
+function resetList(){
+    while(scoreListEl.firstChild){
+        scoreListEl.removeChild(scoreListEl.firstChild)
+    }
+}
