@@ -1,3 +1,5 @@
+// readme
+
 // DOM elements
 const highscoreBtn = document.getElementById('highscoreBtn');
 const timerEl = document.getElementById('timer');
@@ -15,6 +17,7 @@ const scoreHEl = document.getElementById('scoreH');
 const scoreListEl = document.getElementById('scoreList');
 const restartEl = document.getElementById('restart');
 const deleteScoresEl = document.getElementById('deletescores');
+const rightOrWrongEl = document.getElementById('rightOrWrong');
 // variables
 let questionsShuflle, questionIndex;
 let score = 0;
@@ -64,6 +67,7 @@ function showNextQ(){
         timerEl.classList.add('hide');
         questionEl.classList.add('hide');
         answersEl.classList.add('hide');
+        rightOrWrongEl.classList.add('hide');
         doneHEl.classList.remove('hide');
         donePEl.classList.remove('hide');
         donePEl.innerText = ('Your final score is ' + showScore);
@@ -95,10 +99,19 @@ answersEl.addEventListener('click', function (e){
         if(picked === questionsShuflle[questionIndex].answer){
             score = score + 20;
             questionIndex++;
+            rightOrWrongEl.innerText = 'Correct!';
+            setTimeout(function(){
+                rightOrWrongEl.innerHTML = '';
+            }, 2000);
             showNextQ();
         }else {
             questionIndex++;
             timeRemaing = timeRemaing - 10;
+            rightOrWrongEl.innerText = 'Wrong!';
+            setTimeout(function(){
+                rightOrWrongEl.innerHTML = '';
+            }, 2000);
+            showNextQ();
             showNextQ();
         }
     }

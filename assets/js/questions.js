@@ -1,13 +1,13 @@
 const questions = [
     {
-      title: "Commonly used data types DO NOT include:",
-      choices: ["strings", "booleans", "alerts", "numbers"],
-      answer: "alerts"
+      title: "The ____ method of an Array object adds and/or removes elements from an array.",
+      choices: ["reverse", "shift", "splice", "slice"],
+      answer: "splice"
     },
     {
-      title: "The condition in an if / else statement is enclosed within ____.",
-      choices: ["quotes", "curly brackets", "square brackets", "parentheses"],
-      answer: "parentheses"
+      title: "Javascript is interpreted by ____.",
+      choices: ["server", "object", "files", "client"],
+      answer: "client"
     },
     {
       title: "What are variables used for in JavaScript programs?",
