@@ -52,6 +52,7 @@ function startQuiz(){
     questionEl.classList.remove('hide');
     answersEl.classList.remove('hide');
     rightOrWrongEl.classList.remove('hide');
+    inputEl.value = '';
     inputEl.placeholder = '';
     showNextQ();
     setTimer();
@@ -152,7 +153,7 @@ restartEl.addEventListener('click', () => {
     startP.classList.remove('hide');
     highscoreBtn.classList.remove('hide');
     timerEl.classList.remove('hide');
-    timerEl.innerText = 'Time: ';
+    timerEl.innerText = 'Time: 0';
     stopTimer();
 })
 // delete scores
