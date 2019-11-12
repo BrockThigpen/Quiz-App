@@ -1,5 +1,3 @@
-// readme
-
 // DOM elements
 const highscoreBtn = document.getElementById('highscoreBtn');
 const timerEl = document.getElementById('timer');
@@ -53,6 +51,7 @@ function startQuiz(){
     questionIndex = 0;
     questionEl.classList.remove('hide');
     answersEl.classList.remove('hide');
+    rightOrWrongEl.classList.remove('hide');
     inputEl.value = '';
     showNextQ();
     setTimer();
