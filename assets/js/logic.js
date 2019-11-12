@@ -52,7 +52,7 @@ function startQuiz(){
     questionEl.classList.remove('hide');
     answersEl.classList.remove('hide');
     rightOrWrongEl.classList.remove('hide');
-    inputEl.value = '';
+    inputEl.placeholder = '';
     showNextQ();
     setTimer();
 }
